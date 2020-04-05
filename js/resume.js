@@ -27,6 +27,7 @@
 
 // Bar Percentage
   $('.bar-percentage[data-percentage]').each(function () {
+    if ($(this).scrollTop() > 2500) {  
     var progress = $(this);
     var percentage = Math.ceil($(this).attr('data-percentage'));
     $({countNum: 0}).animate({countNum: percentage}, {
@@ -38,6 +39,7 @@
         progress.siblings().children().css('width',pct);
       }
     });
-  });
+};
+});
 
 })(jQuery); // End of use strict
